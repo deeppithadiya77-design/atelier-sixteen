@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowLeft } from 'lucide-react';
+import { ArrowLeft, MapPin } from 'lucide-react';
 import { STUDIO_CONTACT } from '../config/leadFormConfig';
 import { EDITORIAL_EASE } from '../utils/motion';
 
@@ -80,9 +80,17 @@ export default function PrivacyPolicy({ onBackHome }) {
                 <span className="block font-sans text-[10px] tracking-[0.18em] uppercase text-[#7A7267]">
                   {loc.label}
                 </span>
-                <p className="mt-1 font-sans text-xs leading-relaxed text-[#141414]">
-                  {loc.line}
-                </p>
+                <a
+                  href={loc.mapUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="group mt-1 inline-flex items-start gap-1.5 font-sans text-xs leading-relaxed text-[#141414]"
+                >
+                  <MapPin className="mt-0.5 h-3.5 w-3.5 shrink-0 text-[#7A7267] group-hover:text-[#141414] transition-colors" strokeWidth={1.5} />
+                  <span className="underline underline-offset-4 decoration-[#141414]/25 group-hover:decoration-[#141414]/70 transition-colors">
+                    {loc.line}
+                  </span>
+                </a>
               </div>
             ))}
           </div>

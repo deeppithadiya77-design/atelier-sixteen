@@ -19,10 +19,14 @@ export const STUDIO_CONTACT = {
     {
       label: 'Rajkot Studio',
       line: 'B-218, RK Iconic, 150 Feet Ring Road, Near Shital Park, Rajkot, Gujarat',
+      mapUrl:
+        'https://www.google.com/maps/search/?api=1&query=B-218%2C%20RK%20Iconic%2C%20150%20Feet%20Ring%20Road%2C%20Near%20Shital%20Park%2C%20Rajkot%2C%20Gujarat',
     },
     {
       label: 'Ahmedabad Studio',
       line: '307 Athena Avenue, Nr. Land Rover Showroom, S. G. Highway, Gota, 382481, Ahmedabad',
+      mapUrl:
+        'https://www.google.com/maps/search/?api=1&query=307%20Athena%20Avenue%2C%20Nr.%20Land%20Rover%20Showroom%2C%20S.%20G.%20Highway%2C%20Gota%2C%20382481%2C%20Ahmedabad',
     },
   ],
   studioHours: 'Monday — Saturday, 10:00 AM – 7:00 PM IST',

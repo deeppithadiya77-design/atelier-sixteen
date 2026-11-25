@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-import { ArrowLeft, ArrowRight, ArrowUpRight, Check, MessageCircle, Phone } from 'lucide-react';
+import { ArrowLeft, ArrowRight, ArrowUpRight, Check, MapPin, MessageCircle, Phone } from 'lucide-react';
 import { FORM_OPTIONS } from '../data/studioData';
 import {
   buildWhatsAppUrl,
@@ -159,9 +159,17 @@ export default function ConsultationForm({ preselectedType = '' }) {
                     <span className="block font-sans text-[10px] font-medium tracking-[0.2em] uppercase text-[#7A7267]">
                       {loc.label}
                     </span>
-                    <p className="mt-1 font-sans text-xs leading-relaxed text-[#141414]/80 font-light">
-                      {loc.line}
-                    </p>
+                    <a
+                      href={loc.mapUrl}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="group mt-1.5 inline-flex items-start gap-1.5 font-sans text-xs leading-relaxed text-[#141414]/80 font-light hover:text-[#141414] transition-colors"
+                    >
+                      <MapPin className="mt-0.5 h-3.5 w-3.5 shrink-0 text-[#7A7267] group-hover:text-[#141414] transition-colors" strokeWidth={1.5} />
+                      <span className="underline underline-offset-4 decoration-[#141414]/20 group-hover:decoration-[#141414]/70 transition-colors">
+                        {loc.line}
+                      </span>
+                    </a>
                   </div>
                 ))}
               </div>
