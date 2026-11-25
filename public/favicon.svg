@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 36" fill="none">
+  <rect width="36" height="36" rx="4" fill="#F6F4F0" />
+  <g fill="#141414">
+    <!-- Row 1 -->
+    <rect x="4" y="4" width="6" height="6" rx="1.2" />
+    <rect x="11.33" y="4" width="6" height="6" rx="1.2" />
+    <rect x="18.66" y="4" width="6" height="6" rx="1.2" />
+    <rect x="26" y="4" width="6" height="6" rx="1.2" />
+    <!-- Row 2 -->
+    <rect x="4" y="11.33" width="6" height="6" rx="1.2" />
+    <rect x="11.33" y="11.33" width="6" height="6" rx="1.2" />
+    <rect x="18.66" y="11.33" width="6" height="6" rx="1.2" />
+    <rect x="26" y="11.33" width="6" height="6" rx="1.2" />
+    <!-- Row 3 (11th square: row 3, col 3 intentionally omitted) -->
+    <rect x="4" y="18.66" width="6" height="6" rx="1.2" />
+    <rect x="11.33" y="18.66" width="6" height="6" rx="1.2" />
+    <rect x="26" y="18.66" width="6" height="6" rx="1.2" />
+    <!-- Row 4 -->
+    <rect x="4" y="26" width="6" height="6" rx="1.2" />
+    <rect x="11.33" y="26" width="6" height="6" rx="1.2" />
+    <rect x="18.66" y="26" width="6" height="6" rx="1.2" />
+    <rect x="26" y="26" width="6" height="6" rx="1.2" />
+  </g>
+</svg>
