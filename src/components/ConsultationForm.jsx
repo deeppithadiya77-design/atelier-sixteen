@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-import { ArrowLeft, ArrowRight, Check, MessageCircle } from 'lucide-react';
+import { ArrowLeft, ArrowRight, ArrowUpRight, Check, MessageCircle, Phone } from 'lucide-react';
 import { FORM_OPTIONS } from '../data/studioData';
 import {
   buildWhatsAppUrl,
@@ -131,21 +131,24 @@ export default function ConsultationForm({ preselectedType = '' }) {
                 >
                   {STUDIO_CONTACT.email}
                 </a>
-                <div className="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 font-sans text-xs text-[#141414]/85">
-                  <a
-                    href={`tel:${STUDIO_CONTACT.phoneDisplay.replace(/\s+/g, '')}`}
-                    className="hover:opacity-70 transition-opacity"
-                  >
-                    {STUDIO_CONTACT.phoneDisplay}
-                  </a>
-                  <span className="text-[#141414]/25">·</span>
+                <div className="mt-4 flex flex-wrap items-center gap-3">
                   <a
                     href={buildWhatsAppUrl({})}
                     target="_blank"
                     rel="noreferrer"
-                    className="underline underline-offset-4 decoration-[#141414]/30 hover:opacity-70 transition-opacity"
+                    className="inline-flex items-center gap-2.5 bg-[#141414] px-5 py-3 font-sans text-[11px] font-medium tracking-[0.2em] uppercase text-[#F6F4F0] transition-colors hover:bg-[#141414]/85"
                   >
-                    WhatsApp Direct
+                    <MessageCircle className="h-3.5 w-3.5" strokeWidth={1.5} />
+                    Direct WhatsApp
+                    <ArrowUpRight className="h-3.5 w-3.5" strokeWidth={1.5} />
+                  </a>
+
+                  <a
+                    href={`tel:${STUDIO_CONTACT.phoneDisplay.replace(/\s+/g, '')}`}
+                    className="inline-flex items-center gap-2 border border-[#141414]/25 px-4 py-3 font-sans text-[11px] font-medium tracking-[0.16em] uppercase text-[#141414] transition-colors hover:border-[#141414]"
+                  >
+                    <Phone className="h-3.5 w-3.5" strokeWidth={1.5} />
+                    {STUDIO_CONTACT.phoneDisplay}
                   </a>
                 </div>
               </div>

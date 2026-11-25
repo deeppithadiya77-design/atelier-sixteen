@@ -10,6 +10,7 @@ import DesignProcess from './components/DesignProcess';
 import ConsultationForm from './components/ConsultationForm';
 import Footer from './components/Footer';
 import PrivacyPolicy from './components/PrivacyPolicy';
+import WhatsAppFloatButton from './components/WhatsAppFloatButton';
 
 function getIsPrivacyPath() {
   if (typeof window === 'undefined') return false;
@@ -125,6 +126,8 @@ export default function App() {
         onNavigateSection={scrollToSection}
         onOpenPrivacy={handleOpenPrivacy}
       />
+
+      {!showPreloader && <WhatsAppFloatButton />}
     </div>
   );
 }
