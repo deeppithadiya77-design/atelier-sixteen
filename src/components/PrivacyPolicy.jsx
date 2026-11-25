@@ -70,19 +70,33 @@ export default function PrivacyPolicy({ onBackHome }) {
           ))}
         </div>
 
-        <div className="mt-8 border border-[#141414]/15 bg-[#D8CFC4]/35 p-6 sm:p-8">
+        <div className="mt-8 border border-[#141414]/15 bg-[#D8CFC4]/35 p-6 sm:p-8 space-y-4">
           <span className="block font-sans text-[10px] font-medium tracking-[0.22em] uppercase text-[#7A7267]">
             Privacy Contact
           </span>
-          <p className="mt-2 font-sans text-sm text-[#141414]">
-            {STUDIO_CONTACT.brandName} — {STUDIO_CONTACT.address}
-          </p>
-          <a
-            href={`mailto:${STUDIO_CONTACT.email}`}
-            className="mt-1 inline-block font-sans text-sm text-[#141414] underline underline-offset-4 decoration-[#141414]/35"
-          >
-            {STUDIO_CONTACT.email}
-          </a>
+          <div className="grid grid-cols-1 gap-4 sm:grid-cols-2">
+            {STUDIO_CONTACT.addresses.map((loc) => (
+              <div key={loc.label}>
+                <span className="block font-sans text-[10px] tracking-[0.18em] uppercase text-[#7A7267]">
+                  {loc.label}
+                </span>
+                <p className="mt-1 font-sans text-xs leading-relaxed text-[#141414]">
+                  {loc.line}
+                </p>
+              </div>
+            ))}
+          </div>
+          <div className="pt-2 flex flex-wrap items-center gap-x-5 gap-y-1 text-sm text-[#141414]">
+            <a
+              href={`mailto:${STUDIO_CONTACT.email}`}
+              className="underline underline-offset-4 decoration-[#141414]/35"
+            >
+              {STUDIO_CONTACT.email}
+            </a>
+            <a href={`tel:${STUDIO_CONTACT.phoneDisplay.replace(/\s+/g, '')}`}>
+              {STUDIO_CONTACT.phoneDisplay}
+            </a>
+          </div>
         </div>
       </div>
     </motion.main>

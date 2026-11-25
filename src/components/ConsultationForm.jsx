@@ -120,7 +120,7 @@ export default function ConsultationForm({ preselectedType = '' }) {
               Share a few initial parameters about your site and vision. Our principal architects review every inquiry personally within two business days.
             </p>
 
-            <div className="mt-10 border-t border-[#141414]/15 pt-8 space-y-4">
+            <div className="mt-10 border-t border-[#141414]/15 pt-8 space-y-5">
               <div>
                 <span className="block font-sans text-[10px] font-medium tracking-[0.22em] uppercase text-[#7A7267]">
                   Direct Studio Desk
@@ -131,7 +131,38 @@ export default function ConsultationForm({ preselectedType = '' }) {
                 >
                   {STUDIO_CONTACT.email}
                 </a>
+                <div className="mt-1.5 flex flex-wrap items-center gap-x-4 gap-y-1 font-sans text-xs text-[#141414]/85">
+                  <a
+                    href={`tel:${STUDIO_CONTACT.phoneDisplay.replace(/\s+/g, '')}`}
+                    className="hover:opacity-70 transition-opacity"
+                  >
+                    {STUDIO_CONTACT.phoneDisplay}
+                  </a>
+                  <span className="text-[#141414]/25">·</span>
+                  <a
+                    href={buildWhatsAppUrl({})}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="underline underline-offset-4 decoration-[#141414]/30 hover:opacity-70 transition-opacity"
+                  >
+                    WhatsApp Direct
+                  </a>
+                </div>
               </div>
+
+              <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 pt-2">
+                {STUDIO_CONTACT.addresses.map((loc) => (
+                  <div key={loc.label}>
+                    <span className="block font-sans text-[10px] font-medium tracking-[0.2em] uppercase text-[#7A7267]">
+                      {loc.label}
+                    </span>
+                    <p className="mt-1 font-sans text-xs leading-relaxed text-[#141414]/80 font-light">
+                      {loc.line}
+                    </p>
+                  </div>
+                ))}
+              </div>
+
               <div>
                 <span className="block font-sans text-[10px] font-medium tracking-[0.22em] uppercase text-[#7A7267]">
                   Studio Hours
@@ -261,7 +292,7 @@ export default function ConsultationForm({ preselectedType = '' }) {
                               type="text"
                               value={formData.city}
                               onChange={(e) => updateField('city', e.target.value)}
-                              placeholder="e.g. Mumbai, Alibaug, Bengaluru"
+                              placeholder="e.g. Rajkot, Ahmedabad, Surat"
                               className="mt-2 w-full border-b border-[#141414]/25 bg-transparent py-3 font-sans text-sm text-[#141414] placeholder:text-[#7A7267]/60 focus:border-[#141414] focus:outline-none"
                             />
                           </div>
@@ -374,7 +405,7 @@ export default function ConsultationForm({ preselectedType = '' }) {
                                 type="tel"
                                 value={formData.phone}
                                 onChange={(e) => updateField('phone', e.target.value)}
-                                placeholder="+91 98200 00000"
+                                placeholder="+91 87996 00000"
                                 className="mt-2 w-full border-b border-[#141414]/25 bg-transparent py-3 font-sans text-sm text-[#141414] placeholder:text-[#7A7267]/60 focus:border-[#141414] focus:outline-none"
                               />
                             </div>

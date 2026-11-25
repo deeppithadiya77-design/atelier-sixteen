@@ -74,24 +74,34 @@ export default function Footer({ onNavigateSection, onOpenPrivacy }) {
               <span className="block font-sans text-[10px] font-medium tracking-[0.24em] uppercase text-[#F6F4F0]/50">
                 Studio & Inquiries
               </span>
-              <div className="mt-4 space-y-2 font-sans text-xs text-[#F6F4F0]/80 font-light">
-                <p>{STUDIO_CONTACT.address}</p>
-                <p>
-                  <a
-                    href={`mailto:${STUDIO_CONTACT.email}`}
-                    className="hover:text-[#F6F4F0] underline underline-offset-4 decoration-[#F6F4F0]/30 transition-colors"
-                  >
-                    {STUDIO_CONTACT.email}
-                  </a>
-                </p>
-                <p>
-                  <a
-                    href={`tel:${STUDIO_CONTACT.phoneDisplay.replace(/\s+/g, '')}`}
-                    className="hover:text-[#F6F4F0] transition-colors"
-                  >
-                    {STUDIO_CONTACT.phoneDisplay}
-                  </a>
-                </p>
+              <div className="mt-4 space-y-4 font-sans text-xs text-[#F6F4F0]/80 font-light">
+                {STUDIO_CONTACT.addresses.map((loc) => (
+                  <div key={loc.label}>
+                    <span className="block font-sans text-[10px] tracking-[0.18em] uppercase text-[#F6F4F0]/50">
+                      {loc.label}
+                    </span>
+                    <p className="mt-1 leading-relaxed">{loc.line}</p>
+                  </div>
+                ))}
+
+                <div className="pt-1 space-y-1.5">
+                  <p>
+                    <a
+                      href={`mailto:${STUDIO_CONTACT.email}`}
+                      className="hover:text-[#F6F4F0] underline underline-offset-4 decoration-[#F6F4F0]/30 transition-colors"
+                    >
+                      {STUDIO_CONTACT.email}
+                    </a>
+                  </p>
+                  <p>
+                    <a
+                      href={`tel:${STUDIO_CONTACT.phoneDisplay.replace(/\s+/g, '')}`}
+                      className="hover:text-[#F6F4F0] transition-colors"
+                    >
+                      Call / WhatsApp: {STUDIO_CONTACT.phoneDisplay}
+                    </a>
+                  </p>
+                </div>
               </div>
             </div>
 

@@ -4,18 +4,27 @@
  * Replace the placeholders below to connect your live backend endpoints:
  * 1. Web3Forms: https://web3forms.com/ (paste your access key)
  * 2. Google Sheets: Deploy a Google Apps Script Web App URL to log leads
- * 3. WhatsApp: Use digits only with country code (e.g., "919820016016")
+ * 3. WhatsApp: Use digits only with country code (e.g., "918799612229")
  */
 
 export const STUDIO_CONTACT = {
   brandName: 'Atelier Sixteen',
   tagline: 'INTERIOR | ARCHITECTURE | LANDSCAPE',
-  email: 'studio@ateliersixteen.in',
-  phoneDisplay: '+91 98200 16016',
-  whatsappNumber: '919820016016',
+  email: 'atelier.sixteen16@gmail.com',
+  phoneDisplay: '+91 87996 12229',
+  whatsappNumber: '918799612229',
   instagramHandle: '@ateliersixteen_16',
   instagramUrl: 'https://www.instagram.com/ateliersixteen_16/',
-  address: '16th Road, Khar West, Mumbai 400052',
+  addresses: [
+    {
+      label: 'Rajkot Studio',
+      line: 'B-218, RK Iconic, 150 Feet Ring Road, Near Shital Park, Rajkot, Gujarat',
+    },
+    {
+      label: 'Ahmedabad Studio',
+      line: '307 Athena Avenue, Nr. Land Rover Showroom, S. G. Highway, Gota, 382481, Ahmedabad',
+    },
+  ],
   studioHours: 'Monday — Saturday, 10:00 AM – 7:00 PM IST',
 };
 
